@@ -519,18 +519,52 @@
 {
 "name":"아우렐리온",
 "age":"???",
-"gender":"남성",
+"gender":"여성",
 "nation":"무소속",
 "emblem":"nope",
 "position":"은둔자",
 "rank":"마제스티1급",
 "appearance":"긴 은발~적발 그라데이션, 백안, 초월적 분위기",
-"body":"-",
+"body":"초거대",
 "clothes":"회색 로브, 목검",
 "personality":"초연함",
 "enneagram":"5w4",
 "speech":"담담함",
 "feature":"고대 생존자, 안개의 오러"
+},
+
+{
+"name":"펜넬",
+"age":"27세",
+"gender":"남성",
+"nation":"무소속",
+"emblem":"nope",
+"position":"정보상",
+"rank":"워커3급",
+"appearance":"주황머리, 갈색 눈, 차분한 분위기",
+"body":"-",
+"clothes":"흰 셔츠, 가죽 멜빵바지",
+"personality":"차분함",
+"enneagram":"5w6",
+"speech":"나긋함",
+"feature":"대륙의 정보상"
+},
+
+{
+"name":"라크샨",
+"age":"24세",
+"gender":"여성",
+"nation":"무소속",
+"emblem":"nope",
+"position":"암살자",
+"rank":"러너1급",
+"appearance":"베이지색 머리, 황안, 소악마, 메스카키",
+"body":"-",
+"clothes":"타이트한 암살자 복, 검은로브",
+"personality":"소악마",
+"enneagram":"7w8",
+"speech":"장난스러움",
+"feature":"암살길드 소속 암살자"
 },
 
 {
