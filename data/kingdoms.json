@@ -1,0 +1,84 @@
+[
+{
+"name":"아르델 왕국",
+"emblem":"ardel",
+"type":"왕국",
+"region":"동부 지역",
+"description":"기사의 명예와 충성을 중시하는 왕국. 왕실과 백성의 관계가 가깝다.",
+"industry":"목축 산업",
+"culture":"기사의 명예, 충성, 왕실 중심 문화",
+"knight":"왕립기사단"
+},
+
+
+{
+"name":"레오니스 왕국",
+"emblem":"leonis",
+"type":"왕국",
+"region":"남부 지역",
+"description":"무역과 해상 활동이 발달한 귀족 중심 국가.",
+"industry":"무역, 해운업",
+"culture":"귀족 정치와 외교 중심",
+"knight":"황금사자 기사단"
+},
+
+
+{
+"name":"루미나스 성국",
+"emblem":"luminas",
+"type":"성국",
+"region":"중부 고산지대",
+"description":"루미나스 교단을 중심으로 한 종교 국가.",
+"industry":"의료 기술, 자선 사업",
+"culture":"신앙 중심 사회",
+"knight":"성광기사단"
+},
+
+
+{
+"name":"발렌 공국",
+"emblem":"vallen",
+"type":"공국",
+"region":"북부 설산지대",
+"description":"전투 민족이 살아가는 군사 국가.",
+"industry":"군사",
+"culture":"전투와 명예 중시",
+"knight":"흑철기사단"
+},
+
+
+{
+"name":"발하르 제국",
+"emblem":"valhar",
+"type":"제국",
+"region":"중부~서부",
+"description":"압도적인 군사력과 영토를 가진 초대형 제국.",
+"industry":"농업, 군수",
+"culture":"제국주의와 황제 중심",
+"knight":"황실기사단, 근위기사단"
+},
+
+
+{
+"name":"사교도",
+"emblem":"cult",
+"type":"비밀 세력",
+"region":"전 대륙 암약",
+"description":"악마 숭배와 강자주의를 따르는 비밀 세력.",
+"industry":"없음",
+"culture":"교주 절대권력",
+"knight":"없음"
+},
+
+{
+"name":"무소속",
+"emblem":"nope",
+"type":"자유 세력",
+"region":"전 대륙 분포",
+"description":"어디에도 소속되지 않은 자유로운 세력.",
+"industry":"없음",
+"culture":"자유, 사업, 상업",
+"knight":"없음"
+}
+
+]

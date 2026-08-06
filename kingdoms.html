@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>국가 - 멸망할 왕국의 기사가 되려 합니다</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav>
+
+<h2>
+FALLEN KINGDOM
+</h2>
+
+
+<ul>
+
+<li><a href="index.html">메인</a></li>
+
+<li><a href="world.html">세계관</a></li>
+
+<li><a href="kingdoms.html">국가</a></li>
+
+<li><a href="characters.html">등장인물</a></li>
+
+<li><a href="system.html">기사 경지</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+<main class="page">
+
+
+<section class="world-intro">
+
+
+<h1>
+KINGDOMS
+</h1>
+
+
+<p>
+카이슨워드의 국가와 세력
+</p>
+
+
+</section>
+
+<section id="kingdom-list"
+class="kingdom-list">
+
+</section>
+
+
+<!-- 국가 상세 팝업 -->
+
+<div id="kingdom-modal"
+class="modal">
+
+
+<div class="modal-content">
+
+
+<span class="close"
+onclick="closeKingdom()">
+
+×
+
+</span>
+
+
+
+<div id="kingdom-info">
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+<section id="kingdom-list" class="kingdom-list">
+
+</section>
+
+<div id="kingdom-modal" class="modal">
+
+
+<div class="modal-content">
+
+
+<span class="close"
+onclick="closeKingdom()">
+×
+</span>
+
+
+<div id="kingdom-info">
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="kingdom-card">
+
+
+<h2>
+아르델 왕국
+</h2>
+
+
+<p>
+동부 지역
+</p>
+
+
+<p>
+기사의 명예를 중시하는 왕국.
+백성과 왕실의 관계가 가까우며
+충성심 높은 기사들이 나라를 지킨다.
+</p>
+
+
+<p>
+기사단 : 왕립기사단
+</p>
+
+
+</div>
+
+
+
+
+<div class="kingdom-card">
+
+
+<h2>
+레오니스 왕국
+</h2>
+
+
+<p>
+남부 지역
+</p>
+
+
+<p>
+무역과 해상 활동이 발달한 국가.
+귀족 중심 사회이며 정치력과 외교력이 뛰어나다.
+</p>
+
+
+<p>
+기사단 : 황금사자 기사단
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="kingdom-card">
+
+
+<h2>
+루미나스 성국
+</h2>
+
+
+<p>
+중부 고산 지역
+</p>
+
+
+<p>
+루미나스 교단을 중심으로 한 종교 국가.
+신앙과 의료 기술이 발달했다.
+</p>
+
+
+<p>
+기사단 : 성광기사단
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="kingdom-card">
+
+
+<h2>
+발렌 공국
+</h2>
+
+
+<p>
+북부 설산 지역
+</p>
+
+
+<p>
+전투 민족의 국가.
+국민 대부분이 뛰어난 전투력을 가진 군사 국가다.
+</p>
+
+
+<p>
+기사단 : 흑철기사단
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="kingdom-card">
+
+
+<h2>
+발하르 제국
+</h2>
+
+
+<p>
+중부~서부 지역
+</p>
+
+
+<p>
+압도적인 국력과 군사력을 가진 초대형 제국.
+황제 중심의 절대권력을 유지한다.
+</p>
+
+
+<p>
+기사단 : 황실기사단 / 근위기사단
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="kingdom-card">
+
+
+<h2>
+사교도
+</h2>
+
+
+<p>
+암약하는 세력
+</p>
+
+
+<p>
+강자주의와 악마 숭배를 기반으로 활동하는 비밀 조직.
+루미나스 교단과 적대한다.
+</p>
+
+
+<p>
+지도자 : 교주
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="kingdom-card">
+
+
+<h2>
+무소속
+</h2>
+
+
+<p>
+자유로운 세력
+</p>
+
+
+<p>
+어디에도 소속되지 않은 세력.
+적이 될 수도, 아군이 될 수도 있다.
+</p>
+
+
+<p>
+???
+</p>
+
+
+
+
+</section>
+
+
+
+</main>
+
+
+</body>
+
+</main>
+
+
+<audio id="bgm" loop>
+
+<source src="music/bgm.mp3" type="audio/mpeg">
+
+</audio>
+
+
+<button id="music-btn">
+
+🎵 음악 ON
+
+</button>
+
+
+<script src="script.js"></script>
+
+<script src="kingdom.js"></script>
+
+
+</body>
+
+</html>
