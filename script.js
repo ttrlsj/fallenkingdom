@@ -1,9 +1,21 @@
 let characters = [];
 
 
+// ==============================
+// 캐릭터 데이터 불러오기
+// ==============================
+
 fetch("data/characters.json")
 
-.then(response => response.json())
+.then(response => {
+
+    if (!response.ok) {
+        throw new Error("characters.json 파일을 불러올 수 없습니다.");
+    }
+
+    return response.json();
+
+})
 
 .then(data => {
 
@@ -11,383 +23,333 @@ fetch("data/characters.json")
 
     createCards();
 
+})
+
+.catch(error => {
+
+    console.error("캐릭터 데이터 로딩 오류:", error);
+
 });
 
 
 
-function createCards(){
+// ==============================
+// 캐릭터 카드 생성
+// ==============================
 
+function createCards() {
 
     let container =
-    document.getElementById(
-        "character-list"
-    );
+        document.getElementById("character-list");
+
+
+    container.innerHTML = "";
 
 
     characters.forEach(character => {
 
-
-        let card =
-        document.createElement("div");
-
-
-        card.className =
-        "character-card";
-
-
-        card.onclick = function(){
-
-            openCharacter(character);
-
-        };
-
-
-
-        card.innerHTML = `
-
-<div class="character-image">
-
-<img src="images/characters/${character.name}.png">
-
-</div>
-
-
-<div class="emblem">
-
-<img src="images/emblems/${character.emblem}.png">
-
-</div>
-
-
-<div class="character-info">
-
-
-<h2>
-${character.name}
-</h2>
-
-
-<p class="nation">
-
-${character.nation}
-
-</p>
-
-
-<p>
-
-${character.position}
-
-</p>
-
-
-<p class="rank">
-
-${character.rank}
-
-</p>
-
-
-</div>
-
-`;
-
-
-        container.appendChild(card);
-
+        createCharacterCard(container, character);
 
     });
 
-
 }
 
-function openCharacter(character){
 
 
-let modal =
-document.getElementById(
-"character-modal"
-);
+// ==============================
+// 캐릭터 카드 하나 생성
+// ==============================
+
+function createCharacterCard(container, character) {
+
+    let card =
+        document.createElement("div");
 
 
-
-let name =
-document.getElementById(
-"modal-name"
-);
+    card.className =
+        "character-card";
 
 
+    card.onclick = function() {
 
-let info =
-document.getElementById(
-"modal-info"
-);
+        openCharacter(character);
 
-
-
-name.innerHTML =
-character.name;
+    };
 
 
+    card.innerHTML = `
 
-info.innerHTML = `
+        <div class="character-image">
 
-<div class="modal-image">
+            <img
+                src="images/characters/${character.name}.png"
+                alt="${character.name}"
+            >
 
-<img src="images/characters/${character.name}.png">
-
-</div>
-
-
-<p>
-<b>나이</b><br>
-${character.age}세
-</p>
+        </div>
 
 
-<p>
-<b>성별</b><br>
-${character.gender}
-</p>
+        <div class="emblem">
+
+            <img
+                src="images/emblems/${character.emblem}.png"
+                alt="${character.nation}"
+            >
+
+        </div>
 
 
-<p>
-<b>소속</b><br>
-${character.nation}
-</p>
+        <div class="character-info">
+
+            <h2>
+                ${character.name}
+            </h2>
 
 
-<p>
-<b>직위</b><br>
-${character.position}
-</p>
+            <p class="nation">
+                ${character.nation}
+            </p>
 
 
-<p>
-<b>경지</b><br>
-${character.rank}
-</p>
+            <p>
+                ${character.position}
+            </p>
 
 
-<hr>
+            <p class="rank">
+                ${character.rank}
+            </p>
+
+        </div>
+
+    `;
 
 
-<p>
-<b>외형</b><br>
-${character.appearance}
-</p>
-
-
-<p>
-<b>체형</b><br>
-${character.body}
-</p>
-
-
-<p>
-<b>의상</b><br>
-${character.clothes}
-</p>
-
-
-<p>
-<b>성격</b><br>
-${character.personality}
-</p>
-
-
-<p>
-<b>애니어그램</b><br>
-${character.enneagram}
-</p>
-
-
-<p>
-<b>말투</b><br>
-${character.speech}
-</p>
-
-
-<p>
-<b>특징</b><br>
-${character.feature}
-</p>
-
-
-`;
-
-
-
-modal.style.display="flex";
-
+    container.appendChild(card);
 
 }
 
 
 
-function closeCharacter(){
+// ==============================
+// 캐릭터 상세정보
+// ==============================
+
+function openCharacter(character) {
+
+    let modal =
+        document.getElementById("character-modal");
 
 
-document
-.getElementById(
-"character-modal"
-)
-.style.display="none";
+    let name =
+        document.getElementById("modal-name");
 
+
+    let info =
+        document.getElementById("modal-info");
+
+
+    name.innerHTML =
+        character.name;
+
+
+    info.innerHTML = `
+
+        <div class="modal-image">
+
+            <img
+                src="images/characters/${character.name}.png"
+                alt="${character.name}"
+            >
+
+        </div>
+
+
+        <p>
+            <b>나이</b><br>
+            ${character.age}세
+        </p>
+
+
+        <p>
+            <b>성별</b><br>
+            ${character.gender}
+        </p>
+
+
+        <p>
+            <b>소속</b><br>
+            ${character.nation}
+        </p>
+
+
+        <p>
+            <b>직위</b><br>
+            ${character.position}
+        </p>
+
+
+        <p>
+            <b>경지</b><br>
+            ${character.rank}
+        </p>
+
+
+        <hr>
+
+
+        <p>
+            <b>외형</b><br>
+            ${character.appearance}
+        </p>
+
+
+        <p>
+            <b>체형</b><br>
+            ${character.body}
+        </p>
+
+
+        <p>
+            <b>의상</b><br>
+            ${character.clothes}
+        </p>
+
+
+        <p>
+            <b>성격</b><br>
+            ${character.personality}
+        </p>
+
+
+        <p>
+            <b>애니어그램</b><br>
+            ${character.enneagram}
+        </p>
+
+
+        <p>
+            <b>말투</b><br>
+            ${character.speech}
+        </p>
+
+
+        <p>
+            <b>특징</b><br>
+            ${character.feature}
+        </p>
+
+    `;
+
+
+    modal.style.display = "flex";
 
 }
 
-function filterCharacters(nation){
 
 
-let container =
-document.getElementById(
-"character-list"
-);
+// ==============================
+// 캐릭터 상세창 닫기
+// ==============================
 
+function closeCharacter() {
 
-
-container.innerHTML="";
-
-
-
-characters.forEach(character=>{
-
-
-if(
-nation==="전체"
-||
-character.nation.includes(nation)
-){
-
-
-let card =
-document.createElement("div");
-
-
-card.className =
-"character-card";
-
-
-card.onclick=function(){
-
-openCharacter(character);
-
-};
-
-
-
-card.innerHTML = `
-
-<div class="character-image">
-
-
-<img src="images/characters/${character.name}.png">
-
-
-</div>
-
-
-<div class="emblem">
-
-
-<img src="images/emblems/${character.emblem}.png">
-
-
-</div>
-
-
-<div class="character-info">
-
-${character.name}
-
-</h2>
-
-
-<p class="nation">
-
-${character.nation}
-
-</p>
-
-
-<p>
-
-${character.position}
-
-</p>
-
-
-<p class="rank">
-
-${character.rank}
-
-</p>
-
-
-</div>
-
-`;
-
-
-
-container.appendChild(card);
-
-
+    document
+        .getElementById("character-modal")
+        .style.display = "none";
 
 }
 
 
-});
 
+// ==============================
+// 국가별 필터
+// ==============================
+
+function filterCharacters(nation) {
+
+    let container =
+        document.getElementById("character-list");
+
+
+    container.innerHTML = "";
+
+
+    let filteredCharacters;
+
+
+    if (nation === "전체") {
+
+        filteredCharacters = characters;
+
+    }
+
+    else {
+
+        filteredCharacters =
+            characters.filter(character => {
+
+                return character.nation === nation;
+
+            });
+
+    }
+
+
+    console.log(
+        nation,
+        "필터 결과:",
+        filteredCharacters.map(character => character.name)
+    );
+
+
+    filteredCharacters.forEach(character => {
+
+        createCharacterCard(container, character);
+
+    });
 
 }
+
+
+
+// ==============================
+// 배경음악
+// ==============================
 
 const bgm =
-document.getElementById("bgm");
+    document.getElementById("bgm");
 
 
 const musicBtn =
-document.getElementById("music-btn");
+    document.getElementById("music-btn");
 
 
-
-let musicPlaying=false;
-
+let musicPlaying = false;
 
 
-musicBtn.onclick=function(){
+musicBtn.onclick = function() {
+
+    if (musicPlaying) {
+
+        bgm.pause();
+
+        musicBtn.innerHTML =
+            "🎵 음악 OFF";
+
+    }
+
+    else {
+
+        bgm.play();
+
+        musicBtn.innerHTML =
+            "🎵 음악 ON";
+
+    }
 
 
-if(musicPlaying){
-
-
-bgm.pause();
-
-
-musicBtn.innerHTML=
-"🎵 음악 OFF";
-
-
-}
-
-
-else{
-
-
-bgm.play();
-
-
-musicBtn.innerHTML=
-"🎵 음악 ON";
-
-
-}
-
-
-
-musicPlaying=
-!musicPlaying;
-
+    musicPlaying =
+        !musicPlaying;
 
 };
