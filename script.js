@@ -5,7 +5,7 @@ let characters = [];
 // 캐릭터 데이터 불러오기
 // ==============================
 
-fetch("data/characters.json")
+fetch("data/characters.json?v=2")
 
 .then(response => {
 
